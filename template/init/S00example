@@ -1,0 +1,41 @@
+#!/bin/sh
+# This is an example of an init-script for an UserApp
+
+# This file won't be packed when 'baf make' is called! To use it please copy/rename this file.
+
+DISABLED=yes
+
+if [ "${DISABLED}" = "yes" ]; then
+	exit 0
+fi
+
+# check if conf in appfs relevant to us has changed
+function configuration_changed {
+
+	echo -n "1"
+}
+
+case "${1}" in
+	start)
+		echo "Starting App..."
+		/apps/z/bin/example
+		;;
+	stop)
+		echo "Stopping App..."
+		killall -9 /apps/z/bin/example
+		;;
+	restart)
+		echo "Restarting App..."
+		${0} stop
+		${0} start
+		;;
+	apply)
+		if [ "$(configuration_changed)" = "1" ]; then
+			${0} restart
+		fi
+		;;
+	*)
+		echo "Usage ${0} [start|stop|restart]"
+		exit 1
+		;;
+esac
