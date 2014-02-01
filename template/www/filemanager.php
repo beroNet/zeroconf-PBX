@@ -57,7 +57,7 @@
     $script_filename = $doc_root.$_SERVER["PHP_SELF"];
     $path_info = pathinfo($script_filename);
     //$path_info="/apps/asterisk/etc/asterisk";
-    $fm_root_atual="/apps/zeroconf-pbx_TOOTAi/";
+    $fm_root_atual="/apps/zeroconf-PBX/";
 // +--------------------------------------------------
 // | Config
 // +--------------------------------------------------
@@ -67,7 +67,7 @@
     ini_set("error_reporting",$error_reporting);
     if (!isset($dir_atual)){
         #$dir_atual = $path_info["dirname"]."/";
-        $dir_atual="/apps/zeroconf-pbx_TOOTAi/";
+        $dir_atual="/apps/zeroconf-PBX/";
         if (!$islinux) $dir_atual = ucfirst($dir_atual);
         @chmod($dir_atual,0777);
     } else $dir_atual = formatpath($dir_atual);
@@ -152,7 +152,7 @@ class config {
             'upload_ext_filter'=>array(),
             'download_ext_filter'=>array(),
             'error_reporting'=>'',
-            'fm_root'=>'/apps/zeroconf-pbx_TOOTAi/"',
+            'fm_root'=>'/apps/zeroconf-PBX/"',
             'cookie_cache_time'=>time()+60*60*24*30, // 30 Dias
             'version'=>'0.9.3'
             );
@@ -845,13 +845,13 @@ function tree($dir_antes,$dir_corrente,$indice){
     
     $is_proibido=true;
     if (
-        $dir_corrente == "/apps/zeroconf-pbx_TOOTAi/etc" || 
-        $dir_corrente == "/apps/zeroconf-pbx_TOOTAi/etc/asterisk" || 
+        $dir_corrente == "/apps/zeroconf-PBX/etc" || 
+        $dir_corrente == "/apps/zeroconf-PBX/etc/asterisk" || 
         $dir_corrente == "/apps/asterisk/var" || 
         $dir_corrente == "/apps/asterisk/var/log" || 
         $dir_corrente == "/apps/asterisk/var/spool" || 
         $dir_corrente == "/apps/asterisk/sounds" || 
-        $dir_corrente == "/apps/zeroconf-pbx_TOOTAi/" 
+        $dir_corrente == "/apps/zeroconf-PBX/" 
     ){
         $is_proibido = false;
     }
