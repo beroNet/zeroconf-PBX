@@ -1,6 +1,6 @@
 NAME=zeroconf-PBX
-VERSION=1
-DESCRIPTION="default package"
+VERSION=2
+DESCRIPTION="Default package"
 NEED_KERNEL=1
 NEED_ROOTFS=3
 SLOTS=0

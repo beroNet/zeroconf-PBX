@@ -7,4 +7,3 @@ if [ ! -f /apps/zeroconf-PBX/etc/asterisk/extensions.conf ] ; then
     cp -a /apps/zeroconf-PBX/conf/* /apps/zeroconf-PBX/etc/asterisk/
     sync
 fi
-
