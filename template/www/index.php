@@ -21,6 +21,9 @@ if ($_GET['action'] == "reload" ) {
 exec('/apps/asterisk/bin/asterisk -C /apps/asterisk/etc/asterisk/asterisk.conf -rnx "sip show peers" | sed "s/Dyn Forcerport ACL//" | sed "s/ D //" | sed "s/ N //" | sed "s/OK (\(.*\) ms)/OK-(\1_ms)/"  | grep -v "Monitored:" | sed "s/[ ]*/<\/td><td>/g"  | sed "s/^<td>//" | sed "s/^<\/td>//" | sed "s/<td>$//"', $tmppeers);
 $sippeers=implode("<tr></tr>", $tmppeers);
 
+exec('cat /apps/asterisk/etc/asterisk/sip_secrets.conf | sed "s/[\(\!\)]//g" | sed "s/[ ]*/<\/td><td>/g"  | sed "s/^<td>//" | sed "s/^<\/td>//" | sed "s/<td>$//"', $tmpsecrets);
+$sipsecrets=implode("<tr></tr>", $tmpsecrets);
+
 ?>
 
 
@@ -48,14 +51,14 @@ $sippeers=implode("<tr></tr>", $tmppeers);
 
   <h2>Asterisk</h2>
   <div>You can use SIP Phones to register at Asterisk with SIP Port 25060<br>
-  There are 10 SIP Users: Username=10..20 Secret=10..20<br><br>
+  There are 10 SIP Users: Username=10..19 Secret=CHECK BELOW..CHECK BELOW<br><br>
   <b>Example SIP Phone Configuration:</b><br>
   SIP Registrar: <?php echo $_SERVER['SERVER_NAME'] ?>:25060<br>
   SIP Server: <?php echo $_SERVER['SERVER_NAME'] ?>:25060<br>
   SIP Proxy: <?php echo $_SERVER['SERVER_NAME'] ?>:25060<br>
   SIP Server Port: 25060<br>
   Username=10<br>
-  Secret=10<br>
+  Secret=*** CHECK BELOW ***<br>
   <br>
   <b>Howto Dial</b><br>
   Every extensions can reach each other, by just dialing the extensions. <b>Example:</b> Dial 11 to reach Phone 11<br>
@@ -72,15 +75,21 @@ sip.conf
 ========
 SIP accounts ...: 10 to 19 (10)
 SIP FXS accounts: 20 to 27 (8)
-SIP FXO accounts: 91 to 94 (4)
+SIP FXO accounts: 91 to 98 (8)
 
 SIP berofix-trunk has an added parameter:
 
 [berofix-trunk](+)
 insecure=invite
 
+sip_secrets.conf
+================
+secret value for sip extensions
+
+
 What's new:
 
+* SIP extensions have secret value generated during installation
 * FXS port(s) can be register as SIP extensions
 * FXS port(s) can call each other as well as VOIP extensions
 * VOIP extensions can call FXS port(s)
@@ -102,6 +111,10 @@ What's new:
   <br><b>SIP Status:</b><br>
   <table width=100%>
    <?php echo $sippeers ?>
+  </table>
+  <br><b>SIP Secrets:</b><br>
+  <table width=100%>
+   <?php echo $sipsecrets ?>
   </table>
  </div>
  </div>

@@ -1,0 +1,24 @@
+#!/bin/sh
+# Creating symlink for asterisk sound-files
+
+tgt_file=/apps/asterisk/etc/asterisk/sip_secrets.conf
+src_file=/apps/zeroconf-PBX/etc/asterisk/sip_secrets.conf
+
+case "${1}" in
+	start)
+		echo -n "Adding SIP secrets file : "
+		ln -s ${src_file} ${tgt_file}
+		echo "Done."
+		;;
+	stop)
+		echo -n "Removing SIP secrets file : "
+		rm -f ${tgt_file}
+		echo "Done."
+		;;
+	restart)
+		;;
+	*)
+		echo "Usage ${0} [start|stop|restart]"
+		exit 1
+		;;
+esac

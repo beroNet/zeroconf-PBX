@@ -5,7 +5,7 @@ beroFix PBX App, which requires no configuration, because it has a static config
 
 
 
-v20140211 - devel@tootai.net
+v20140422 - devel@tootai.net
 
 extensions.conf
 ===============
@@ -18,15 +18,21 @@ sip.conf
 ========
 SIP accounts ...: 10 to 19 (10)
 SIP FXS accounts: 20 to 27 (8)
-SIP FXO accounts: 91 to 94 (4)
+SIP FXO accounts: 91 to 98 (8)
 
 SIP berofix-trunk has an added parameter:
 
 [berofix-trunk](+)
 insecure=invite
 
+sip_secrets.conf
+================
+secret value for sip extensions
+
+
 What's new:
 
+* SIP extensions have secret value generated during installation
 * FXS port(s) can be register as SIP extensions
 * FXS port(s) can call each other as well as VOIP extensions
 * VOIP extensions can call FXS port(s)
