@@ -5,7 +5,7 @@ beroFix PBX App, which requires no configuration, because it has a static config
 
 
 
-v20140422 - devel@tootai.net
+v20140503 - devel@tootai.net
 
 extensions.conf
 ===============
@@ -13,6 +13,13 @@ extensions.conf
 . calls to FXS (_2X) ports
 . calls to FXO (_9Z) ports
 . prefix 9 for outgoing calls to first FXO port (equivalent to 91)
+
+globals have an added parameter:
+
+[globals](+)
+DEFAULT_TRUNK=berofix-trunk
+DEFAULT_TECH=SIP
+
 
 sip.conf
 ========
@@ -48,7 +55,7 @@ What's new:
 * Channel language is setted via a global variable DEVICE_LANGUAGE, english (en) is default value. A foreign asterisk_sound app have to set this variable.
   (see asterisk_sound_fr). Note: only one language can be installed at a time.
 * MusicOnHold during transfer
-* Accept SIP or IAX trunk via App trunk-PBX
+* Accept SIP or IAX trunk via App zeroconf-PBX-trunk
 * Create local context
 
 Enjoy!

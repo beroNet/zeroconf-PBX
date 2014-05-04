@@ -71,6 +71,12 @@ extensions.conf
 . calls to FXO (_9Z) ports
 . prefix 9 for outgoing calls to first FXO port (equivalent to 91)
 
+globals have an added parameter:
+
+[globals](+)
+DEFAULT_TRUNK=berofix-trunk
+DEFAULT_TECH=SIP
+
 sip.conf
 ========
 SIP accounts ...: 10 to 19 (10)
