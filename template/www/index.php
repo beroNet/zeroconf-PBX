@@ -49,7 +49,7 @@ $sipsecrets=implode("<tr></tr>", $tmpsecrets);
    </table>
   </div>
 
-  <h2>Asterisk</h2>
+  <h2>Asterisk zeroconf-PBX</h2>
   <div>You can use SIP Phones to register at Asterisk with SIP Port 25060<br>
   There are 10 SIP Users: Username=10..19 Secret=CHECK BELOW..CHECK BELOW<br><br>
   <b>Example SIP Phone Configuration:</b><br>
