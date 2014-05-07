@@ -57,6 +57,7 @@ What's new:
 * MusicOnHold during transfer
 * Accept SIP or IAX trunk via App zeroconf-PBX-trunk
 * Create local context
+* Add DIAL_OPTIONS global variable
 
 Enjoy!
 

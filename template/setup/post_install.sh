@@ -13,7 +13,7 @@ if [ ! -f /apps/zeroconf-PBX/etc/asterisk/extensions.conf ] ; then
 
 	while [ $i -lt 28 ]; do 
 	    echo "[secret_$i](!)" >> $sip_secrets
-	    echo "secret="$(sed 's/[^A-Za-z0-9+_@*%?\]//g' /dev/urandom | tr -d "\n" | dd bs=12 count=1 2>/dev/null) >> $sip_secrets
+	    echo "secret="$(sed 's/[^A-Za-z0-9+_@*%?=]//g' /dev/urandom | tr -d "\n" | dd bs=12 count=1 2>/dev/null) >> $sip_secrets
 	    echo "" >> $sip_secrets
 
 	    i=$(($i + 1))
@@ -23,7 +23,7 @@ if [ ! -f /apps/zeroconf-PBX/etc/asterisk/extensions.conf ] ; then
 
 	while [ $i -lt 99 ]; do 
 	    echo "[secret_$i](!)" >> $sip_secrets
-	    echo "secret="$(sed 's/[^A-Za-z0-9+_@*%?\]//g' /dev/urandom | tr -d "\n" | dd bs=12 count=1 2>/dev/null) >> $sip_secrets 
+	    echo "secret="$(sed 's/[^A-Za-z0-9+_@*%?=]//g' /dev/urandom | tr -d "\n" | dd bs=12 count=1 2>/dev/null) >> $sip_secrets 
 	    echo "" >> $sip_secrets
 
 	    i=$(($i + 1))

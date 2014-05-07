@@ -110,6 +110,7 @@ What's new:
 * Extension 99 plays demo echotest, SIP phones connected outside the local LAN can now test audio (speaking and listening)
 * Channel language is setted via a global variable DEVICE_LANGUAGE, english (en) is default value. A foreign asterisk_sound app have to set this variable.
   (see asterisk_sound_fr). Note: only one language can be installed at a time.
+* Add DIAL_OPTIONS global variable
 
 </pre>
 
