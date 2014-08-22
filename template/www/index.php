@@ -111,6 +111,8 @@ What's new:
 * Channel language is setted via a global variable DEVICE_LANGUAGE, english (en) is default value. A foreign asterisk_sound app have to set this variable.
   (see asterisk_sound_fr). Note: only one language can be installed at a time.
 * Add DIAL_OPTIONS global variable
+* Add LOCAL_RINGPHONES as global variable to allow local setting of ringing phones for incoming calls
+* Add LOCAL_CIDNUM and LOCAL_CIDNAME as global variables to allow general CID for outgoing calls
 
 </pre>
 

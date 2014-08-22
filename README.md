@@ -58,6 +58,8 @@ What's new:
 * Accept SIP or IAX trunk via App zeroconf-PBX-trunk
 * Create local context
 * Add DIAL_OPTIONS global variable
+* Add LOCAL_RINGPHONES as global variable to allow local setting of ringing phones for incoming calls
+* Add LOCAL_CIDNUM and LOCAL_CIDNAME as global variables to allow general CID for outgoing calls
 
 Enjoy!
 
