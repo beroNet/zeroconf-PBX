@@ -60,6 +60,8 @@ What's new:
 * Add DIAL_OPTIONS global variable
 * Add LOCAL_RINGPHONES as global variable to allow local setting of ringing phones for incoming calls
 * Add LOCAL_CIDNUM and LOCAL_CIDNAME as global variables to allow general CID for outgoing calls
+* Add LOCAL_VOICEMAIL as global variable to activate/deactivate voicemail
+* Add LOCAL_RINGTIME as global variable to set the default ring timeout on incoming calls
 
 Enjoy!
 
