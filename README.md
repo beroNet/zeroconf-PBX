@@ -4,8 +4,8 @@ zeroconfPBX
 beroFix PBX App, which requires no configuration, because it has a static configuration. Need asterisk base App.
 
 
-
-v20140503 - devel@tootai.net
+v7, 20150219 - support@beronet.com
+v6, 20140503 - devel@tootai.net
 
 extensions.conf
 ===============
@@ -39,6 +39,9 @@ secret value for sip extensions
 
 What's new:
 
+* new GUI
+* SIP-Extensions are generated the way it is supposed to be
+* use Gateways Session-Management, removed filemanager
 * SIP extensions have secret value generated during installation
 * FXS port(s) can be register as SIP extensions
 * FXS port(s) can call each other as well as VOIP extensions
