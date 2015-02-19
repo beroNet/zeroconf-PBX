@@ -4,6 +4,12 @@ base_path=/apps/zeroconfPBX
 ext_conf=${base_path}/etc/asterisk/extensions.conf
 sip_conf=${base_path}/etc/asterisk/sip.conf
 
+if ! grep "\[berofix-trunk\]" /usr/conf/isgw.sip > /dev/null; then
+	cat ${base_path}/setup/berofix-trunk_isgw.sip >> /usr/conf/isgw.sip
+	/usr/bin/env -i bash -c "/usr/local/www/berogui/misc/ini_to_db.php" 2>/dev/null
+fi
+
+
 if [ -f ${ext_conf} ] ; then
 	exit 0
 fi
