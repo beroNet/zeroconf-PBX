@@ -1,4 +1,4 @@
-zeroconf-PBX
+zeroconfPBX
 ============
 
 beroFix PBX App, which requires no configuration, because it has a static configuration. Need asterisk base App.
@@ -48,14 +48,14 @@ What's new:
 * Not answered incoming calls to 00 extension are redirected to voicemail
 * Voicemail is connected to extension *98, retrieve message LED on SIP phones is working (tested on snom320)
 * FXO lines have to be connected in order (eg: the first MUST be in first port, second in second, aso)
-  Please check the graphical representation of the port assignment to know the right order 
+  Please check the graphical representation of the port assignment to know the right order
 * Outgoing calls through berofix-trunk are automatically redirected to FXO port in case of failure (CONGESTION or CHANUNAVAIL)
 * No more need to prefix with 0 for outgoing calls
 * Extension 99 plays demo echotest, SIP phones connected outside the local LAN can now test audio (speaking and listening)
 * Channel language is setted via a global variable DEVICE_LANGUAGE, english (en) is default value. A foreign asterisk_sound app have to set this variable.
   (see asterisk_sound_fr). Note: only one language can be installed at a time.
 * MusicOnHold during transfer
-* Accept SIP or IAX trunk via App zeroconf-PBX-trunk
+* Accept SIP or IAX trunk via App zeroconfPBX-trunk
 * Create local context
 * Add DIAL_OPTIONS global variable
 * Add LOCAL_RINGPHONES as global variable to allow local setting of ringing phones for incoming calls
