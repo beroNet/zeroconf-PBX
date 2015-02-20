@@ -7,8 +7,7 @@ require_once(file_exists('/home/admin/lib/php/session.php') ? '/home/admin/lib/p
 
 $menu = array(  array('url' => 'index.php', 'id' => 'overview', 'title' => 'Overview'),
 		array('url' => 'changelog.php', 'id' => 'changelog', 'title' => 'Changelog'),
-		array('url' => 'sippeers.php', 'id' => 'sippeers', 'title' => 'SIP Peers'),
-		array('url' => '/userapp/asterisk/', 'id' => 'asterisk', 'title' => 'Asterisk'));
+		array('url' => 'sippeers.php', 'id' => 'sippeers', 'title' => 'SIP Peers'));
 
 $gui = new beroGUIv2($app_name);
 
