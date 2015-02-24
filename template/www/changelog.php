@@ -1,9 +1,8 @@
 <?php
 
-include(file_exists('/home/admin/lib/php/beroGui.class.php') ? '/home/admin/lib/php/beroGui.class.php' : '/apps/asterisk/lib/php/beroGui.class.php');
-
 $app_name = 'zeroconfPBX';
-require_once(file_exists('/home/admin/lib/php/session.php') ? '/home/admin/lib/php/session.php' : '/apps/asterisk/lib/php/session.php');
+include(file_exists('/home/admin/lib/php/beroGui.class.php') ? '/home/admin/lib/php/beroGui.class.php' : '/apps/' . $app_name . '/lib/php/beroGui.class.php');
+require_once(file_exists('/home/admin/lib/php/session.php') ? '/home/admin/lib/php/session.php' : '/apps/' . $app_name . '/lib/php/session.php');
 
 $menu = array(  array('url' => 'index.php', 'id' => 'overview', 'title' => 'Overview'),
 		array('url' => 'changelog.php', 'id' => 'changelog', 'title' => 'Changelog'),
@@ -29,7 +28,7 @@ $body = '<h2>Changelog</h2>' . "\n" .
 	'<li>No more need to prefix with 0 for outgoing calls</li>' . "\n" .
 	'<li>Extension 99 plays demo echotest, SIP phones connected outside the local LAN can now test audio (speaking and listening)</li>' . "\n" .
 	'<li>Channel language is setted via a global variable DEVICE_LANGUAGE, english (en) is default value. ' .
-	'A foreign asterisk_sound app have to set this variable.<br />' . "\n" .
+	'Another asterisk_sound app has to set this variable.<br />' . "\n" .
 	'(see asterisk_sound_fr). Note: only one language can be installed at a time.</li>' . "\n" .
 	'<li>Added DIAL_OPTIONS global variable</li>' . "\n" .
 	'<li>Added LOCAL_RINGPHONES as global variable to allow local setting of ringing phones for incoming calls</li>' . "\n" .

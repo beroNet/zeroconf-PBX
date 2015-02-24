@@ -1,9 +1,9 @@
 <?php
 
-include(file_exists('/home/admin/lib/php/beroGui.class.php') ? '/home/admin/lib/php/beroGui.class.php' : '/apps/asterisk/lib/php/beroGui.class.php');
-
 $app_name = 'zeroconfPBX';
-require_once(file_exists('/home/admin/lib/php/session.php') ? '/home/admin/lib/php/session.php' : '/apps/asterisk/lib/php/session.php');
+
+include(file_exists('/home/admin/lib/php/beroGui.class.php') ? '/home/admin/lib/php/beroGui.class.php' : '/apps/' . $app_name . '/lib/php/beroGui.class.php');
+require_once(file_exists('/home/admin/lib/php/session.php') ? '/home/admin/lib/php/session.php' : '/apps/' . $app_name . '/lib/php/session.php');
 
 $menu = array(  array('url' => 'index.php', 'id' => 'overview', 'title' => 'Overview'),
 		array('url' => 'changelog.php', 'id' => 'changelog', 'title' => 'Changelog'),

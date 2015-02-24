@@ -1,5 +1,5 @@
 body {
-    background: url(/userapp/asterisk/img/background_body.gif) center top;
+    background: url(/userapp/zeroconfPBX/img/background_body.gif) center top;
     color: #777777;
 	font-family: "Helvetica Neue",Arial,Helvetica,sans-serif !important;
 }
@@ -63,7 +63,7 @@ div.error {
 
 /* header */
 #header {
-    background: url(/userapp/asterisk/img/background.gif) left bottom repeat-x;
+    background: url(/userapp/zeroconfPBX/img/background.gif) left bottom repeat-x;
     border: 1px solid #fff;
 }
 
@@ -80,7 +80,7 @@ div.error {
 
 /*content wrapper*/
 .content {
-    background: url(/userapp/asterisk/img/background.gif) 700px top repeat-y;
+    background: url(/userapp/zeroconfPBX/img/background.gif) 700px top repeat-y;
 }
 
 .save-button {
@@ -115,12 +115,12 @@ div.error {
 }
 
 #navigation a {
-    background: url(/userapp/asterisk/img/background.gif) left repeat-y;
+    background: url(/userapp/zeroconfPBX/img/background.gif) left repeat-y;
     color: #000;
 }
 
 #navigation li ul li a {
-    background: url(/userapp/asterisk/img/background.gif) left repeat-y;
+    background: url(/userapp/zeroconfPBX/img/background.gif) left repeat-y;
 }
 
 #navigation li ul li a {
@@ -143,7 +143,7 @@ div.error {
 
 #navigation ul li a:hover {
     border-left: 4px solid #b90000;
-    background: url(/userapp/asterisk/img/background.gif) -200px -200px no-repeat;
+    background: url(/userapp/zeroconfPBX/img/background.gif) -200px -200px no-repeat;
 }
 
 #navigation li:hover {
@@ -165,7 +165,7 @@ h3, h4, h5, h6, h3 a, h4 a, h5 a, h6 a {
 }
 
 #pageName .part1 {
-    background: url("/userapp/asterisk/img/background.gif") repeat-x scroll left bottom transparent;
+    background: url("/userapp/zeroconfPBX/img/background.gif") repeat-x scroll left bottom transparent;
     border: 1px solid #FFFFFF;
     font-family: 'Arial','Verdana',Helvetica san-serif !important;
     padding-bottom: 10px;
@@ -188,7 +188,7 @@ table {
 	width:405px;
 }
 table th {
-    background: url(/userapp/asterisk/img/banner_background.png) left bottom repeat-x;
+    background: url(/userapp/zeroconfPBX/img/banner_background.png) left bottom repeat-x;
     border-bottom: 1px solid #E0E0E0;
     border-left: 1px solid #E0E0E0;
     width: 200px;
@@ -211,7 +211,7 @@ table tr.dark {
 }
 
 #footer {
-    background: url(/userapp/asterisk/img/background.gif) left top repeat-x;
+    background: url(/userapp/zeroconfPBX/img/background.gif) left top repeat-x;
     margin: 10px auto;
     overflow: hidden;
 
@@ -276,7 +276,7 @@ a:hover {
 /*seitliche nav*/
 #active_menu {
     color: #A31D26;
-    background: url(/userapp/asterisk/img/menue_bg.png) no-repeat;
+    background: url(/userapp/zeroconfPBX/img/menue_bg.png) no-repeat;
 }
 a.mainlevel:link, a.mainlevel:visited {
     display: block;
@@ -288,11 +288,11 @@ a.mainlevel:link, a.mainlevel:visited {
     font-family: Arial, Verdana, Helvetica, sans-serif;
     line-height: 20px;
     margin-bottom: 1px;
-    background: url(/userapp/asterisk/img/dot.png) 5px no-repeat;
+    background: url(/userapp/zeroconfPBX/img/dot.png) 5px no-repeat;
 }
 a.mainlevel:hover {
     color: #A31D26;
-    background: url(/userapp/asterisk/img/menue_bg.png) no-repeat;
+    background: url(/userapp/zeroconfPBX/img/menue_bg.png) no-repeat;
     text-decoration:none;
 }
 
@@ -447,7 +447,7 @@ table.moduletable td {
     font-weight: normal;
 }
 table.moduletable tr {
-    background: url(/userapp/asterisk/img/line_middle.png) 5px  repeat;
+    background: url(/userapp/zeroconfPBX/img/line_middle.png) 5px  repeat;
 
 }
 .poll {
