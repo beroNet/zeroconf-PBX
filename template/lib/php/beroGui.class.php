@@ -25,21 +25,21 @@ Class beroGUIv2 {
 			"\t<head>\n" .
 			"\t\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n" .
 			"\t\t<title>beroNet Gateway (" . $this->_page_title . ")</title>\n" .
-			"\t\t<link rel=\"icon\" type=\"image/x-icon\" href=\"/userapp/asterisk/img/favicon.ico\" />\n" .
-			"\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/userapp/asterisk/css/screen.css\" />\n" .
-			"\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/userapp/asterisk/css/template_css.css\" />\n" .
-			"\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/userapp/asterisk/css/jquery-ui-1.8.21.custom.css\" />\n" .
-			"\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/userapp/asterisk/css/jqueryslidemenu.css\" />\n" .
-			"\t\t<script type=\"text/javascript\" language=\"javascript\" src=\"/userapp/asterisk/js/jquery-1.7.2.min.js\"></script>\n" .
-			"\t\t<script type=\"text/javascript\" language=\"javascript\" src=\"/userapp/asterisk/js/jquery-ui-1.8.21.custom.min.js\"></script>\n" .
-			"\t\t<script type=\"text/javascript\" language=\"javascript\" src=\"/userapp/asterisk/js/jqueryslidemenu.js\"></script>\n" .
+			"\t\t<link rel=\"icon\" type=\"image/x-icon\" href=\"/userapp/zeroconfPBX/img/favicon.ico\" />\n" .
+			"\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/userapp/zeroconfPBX/css/screen.css\" />\n" .
+			"\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/userapp/zeroconfPBX/css/template_css.css\" />\n" .
+			"\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/userapp/zeroconfPBX/css/jquery-ui-1.8.21.custom.css\" />\n" .
+			"\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/userapp/zeroconfPBX/css/jqueryslidemenu.css\" />\n" .
+			"\t\t<script type=\"text/javascript\" language=\"javascript\" src=\"/userapp/zeroconfPBX/js/jquery-1.7.2.min.js\"></script>\n" .
+			"\t\t<script type=\"text/javascript\" language=\"javascript\" src=\"/userapp/zeroconfPBX/js/jquery-ui-1.8.21.custom.min.js\"></script>\n" .
+			"\t\t<script type=\"text/javascript\" language=\"javascript\" src=\"/userapp/zeroconfPBX/js/jqueryslidemenu.js\"></script>\n" .
 			"\t</head>\n" .
 			"\t<body>\n" .
 			"\t\t<div class=\"container\" id=\"page\">\n" .
 			"\t\t\t<div id=\"header\">\n" .
 			"\t\t\t\t<div id=\"logo\" style=\"margin-bottom: 30px;\">\n" .
 			"\t\t\t\t\t<a href=\"http://www.beronet.com/\" target=\"_blank\">\n" .
-			"\t\t\t\t\t\t<img src=\"/userapp/asterisk/img/beroNet.jpg\" alt=\"beroNet\" class=\"png\" />\n" .
+			"\t\t\t\t\t\t<img src=\"/userapp/zeroconfPBX/img/beroNet.jpg\" alt=\"beroNet\" class=\"png\" />\n" .
 			"\t\t\t\t\t</a>\n" .
 			"\t\t\t\t</div>\n" .
 			$this->_html_menu($menu) .
@@ -56,11 +56,25 @@ Class beroGUIv2 {
 
 	private function _html_menu ($menu) {
 
+		if ($handle = opendir('/home/admin/apps/')) {
+			while (false !== ($file = readdir($handle))) {
+				if (in_array($file, array('.', '..'))) {
+					continue;
+				}
+				$submenu[] = array('title' => $file, 'id' => 'app_' . $file, 'url' => '/userapp/' . $file);
+			}
+			closedir($handle);
+		}
+
+		$menu[] = array('title' => 'Apps', 'id' => 'apps', 'url' => '', 'submenu' => $submenu);
+		unset($submenu);
+
 		$submenu[] = array('title' => 'App Management', 'id' => 'app_management', 'url' => '/userapp/');
 		$submenu[] = array('title' => 'App Market', 'id' => 'app_market', 'url' => '/app/berogui/index.php?m=market');
 		$submenu[] = array('title' => 'beroGui', 'id' => 'berogui', 'url' => '/app/berogui/');
 		$submenu[] = array('title' => 'Logout', 'id' => 'logout', 'url' => '/app/berogui/includes/logout.php');
 		$menu[] = array('title' => 'Management', 'id' => 'management', 'url' => '', 'submenu' => $submenu);
+		unset($submenu);
 
 		$ret =	"\n<!-- BEGIN FUNCTION _HTML_MENU //-->\n\n" .
 			"\t\t\t\t<div id=\"myslidemenu\" class=\"jqueryslidemenu\">\n" .
@@ -103,7 +117,7 @@ Class beroGUIv2 {
 			"\t\t\t\t<div class=\"part2\">\n" .
 			"\t\t\t\t\t<div class=\"right\">\n" .
 			"\t\t\t\t\t\t<a href=\"http://wiki.beronet.com/index.php/Gateway_app_" . $this->_page_title . "\" target=\"_blank\" id=\"help\">\n" .
-			"\t\t\t\t\t\t\t<img src=\"/userapp/asterisk/img/help_button.png\" alt=\"Help\" />\n" .
+			"\t\t\t\t\t\t\t<img src=\"/userapp/zeroconfPBX/img/help_button.png\" alt=\"Help\" />\n" .
 			"\t\t\t\t\t\t</a>\n" .
 			"\t\t\t\t\t</div>\n" .
 			"\t\t\t\t</div>\n" .
