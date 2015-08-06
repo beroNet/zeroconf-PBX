@@ -1,5 +1,5 @@
 NAME=zeroconfPBX
-VERSION=7
+VERSION=8
 DESCRIPTION="Easy to set up PBX with a standard configuration."
 NEED_KERNEL=1
 NEED_ROOTFS=3
